@@ -103,7 +103,7 @@ func main() {
 		if cfg.Port == 0 {
 			cfg.Port = port
 		}
-		if sessionKey != "" {
+		if cfg.SecretKey == "" {
 			cfg.SecretKey = sessionKey
 		}
 		if cfg.SessionMaxAge == 0 {
