@@ -4,11 +4,11 @@ import (
 	"log"
 
 	"github.com/go-zoox/core-utils/fmt"
+	"github.com/go-zoox/random"
 
 	"github.com/go-zoox/cli"
 	internal "github.com/go-zoox/connect/app"
 	"github.com/go-zoox/connect/app/config"
-	"github.com/go-zoox/random"
 )
 
 func main() {
@@ -35,7 +35,6 @@ func main() {
 				Name:    "session-key",
 				Usage:   "Session Key",
 				EnvVars: []string{"SESSION_KEY"},
-				Value:   random.String(10),
 			},
 			&cli.Int64Flag{
 				Name:    "session-max-age",
@@ -103,7 +102,7 @@ func main() {
 		if cfg.Port == 0 {
 			cfg.Port = port
 		}
-		if cfg.SecretKey == "" {
+		if sessionKey != "" {
 			cfg.SecretKey = sessionKey
 		}
 		if cfg.SessionMaxAge == 0 {
@@ -122,6 +121,9 @@ func main() {
 					RedirectURI:  redirectURI,
 				},
 			}
+		}
+		if cfg.SecretKey == "" {
+			cfg.SecretKey = random.String(10)
 		}
 
 		if debug {
