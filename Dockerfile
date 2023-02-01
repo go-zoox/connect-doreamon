@@ -1,5 +1,5 @@
 # Builder
-FROM golang:1.19-alpine as builder
+FROM whatwewant/builder-go:v1.19-1 as builder
 
 RUN apk add gcc g++ make
 
