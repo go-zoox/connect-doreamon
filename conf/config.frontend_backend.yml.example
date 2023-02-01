@@ -1,0 +1,19 @@
+port: 8080
+
+secret_key: go-zoox
+
+session_max_age: 86400000
+
+frontend:
+  host: 127.0.0.1
+  port: 8000
+
+backend:
+  host: 127.0.0.1
+  port: 8001
+
+oauth2:
+  - name: doreamon
+    client_id: <CLIENT_ID>
+    client_secret: <CLIENT_SECRET>
+    redirect_uri: http://127.0.0.1:8080/login/doreamon/callback
