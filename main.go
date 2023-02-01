@@ -145,7 +145,7 @@ func main() {
 			}
 		}
 		if upstream != "" {
-			if regexp.Match(":", upstream) {
+			if regexp.Match("://", upstream) {
 				u, err := url.Parse(upstream)
 				if err != nil {
 					return fmt.Errorf("upstream format error, protocol://host:port")
@@ -162,6 +162,8 @@ func main() {
 					return fmt.Errorf("upstream format error, host:port")
 				}
 
+				fmt.Println("parts:", parts)
+
 				cfg.Upstream = config.ConfigPartService{
 					Host: parts[0],
 					Port: cast.ToInt64(parts[1]),
@@ -173,28 +175,56 @@ func main() {
 			}
 
 			{
-				u, err := url.Parse(frontend)
-				if err != nil {
-					return fmt.Errorf("frontend format error, protocol://host:port")
-				}
+				if regexp.Match("://", frontend) {
+					u, err := url.Parse(frontend)
+					if err != nil {
+						return fmt.Errorf("frontend format error, protocol://host:port")
+					}
 
-				cfg.Frontend = config.ConfigPartService{
-					Protocol: u.Scheme,
-					Host:     u.Hostname(),
-					Port:     cast.ToInt64(u.Port()),
+					cfg.Frontend = config.ConfigPartService{
+						Protocol: u.Scheme,
+						Host:     u.Hostname(),
+						Port:     cast.ToInt64(u.Port()),
+					}
+				} else {
+					parts := strings.Split(frontend, ":")
+					if len(parts) != 2 {
+						return fmt.Errorf("frontend format error, host:port")
+					}
+
+					fmt.Println("parts:", parts)
+
+					cfg.Frontend = config.ConfigPartService{
+						Host: parts[0],
+						Port: cast.ToInt64(parts[1]),
+					}
 				}
 			}
 
 			{
-				u, err := url.Parse(backend)
-				if err != nil {
-					return fmt.Errorf("backend format error, protocol://host:port")
-				}
+				if regexp.Match("://", backend) {
+					u, err := url.Parse(backend)
+					if err != nil {
+						return fmt.Errorf("backend format error, protocol://host:port")
+					}
 
-				cfg.Backend = config.ConfigPartService{
-					Protocol: u.Scheme,
-					Host:     u.Hostname(),
-					Port:     cast.ToInt64(u.Port()),
+					cfg.Backend = config.ConfigPartService{
+						Protocol: u.Scheme,
+						Host:     u.Hostname(),
+						Port:     cast.ToInt64(u.Port()),
+					}
+				} else {
+					parts := strings.Split(backend, ":")
+					if len(parts) != 2 {
+						return fmt.Errorf("backend format error, host:port")
+					}
+
+					fmt.Println("parts:", parts)
+
+					cfg.Backend = config.ConfigPartService{
+						Host: parts[0],
+						Port: cast.ToInt64(parts[1]),
+					}
 				}
 			}
 		}
