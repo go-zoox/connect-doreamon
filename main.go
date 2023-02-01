@@ -162,8 +162,6 @@ func main() {
 					return fmt.Errorf("upstream format error, host:port")
 				}
 
-				fmt.Println("parts:", parts)
-
 				cfg.Upstream = config.ConfigPartService{
 					Host: parts[0],
 					Port: cast.ToInt64(parts[1]),
@@ -192,8 +190,6 @@ func main() {
 						return fmt.Errorf("frontend format error, host:port")
 					}
 
-					fmt.Println("parts:", parts)
-
 					cfg.Frontend = config.ConfigPartService{
 						Host: parts[0],
 						Port: cast.ToInt64(parts[1]),
@@ -218,8 +214,6 @@ func main() {
 					if len(parts) != 2 {
 						return fmt.Errorf("backend format error, host:port")
 					}
-
-					fmt.Println("parts:", parts)
 
 					cfg.Backend = config.ConfigPartService{
 						Host: parts[0],
