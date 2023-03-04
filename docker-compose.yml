@@ -1,0 +1,13 @@
+services:
+  zapdos:
+    restart: always
+    image: whatwewant/connect-doreamon:v1
+    ports:
+      - 0.0.0.0:8080:8080 # webhook
+    environment:
+      DEBUG: ${DEBUG}
+      SESSION_KEY: ${SESSION_KEY}
+      UPSTREAM: ${UPSTREAM}
+      CLIENT_ID: ${CLIENT_ID}
+      CLIENT_SECRET: ${CLIENT_SECRET}
+      REDIRECT_URI: ${REDIRECT_URI}
