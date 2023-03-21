@@ -144,7 +144,10 @@ func main() {
 				},
 			}
 		}
-		if upstream != "" {
+
+		if cfg.Upstream.Host != "" && cfg.Upstream.Port != 0 {
+			// ignore
+		} else if upstream != "" {
 			if regexp.Match("://", upstream) {
 				u, err := url.Parse(upstream)
 				if err != nil {
@@ -163,8 +166,9 @@ func main() {
 				}
 
 				cfg.Upstream = config.ConfigPartService{
-					Host: parts[0],
-					Port: cast.ToInt64(parts[1]),
+					Protocol: "http",
+					Host:     parts[0],
+					Port:     cast.ToInt64(parts[1]),
 				}
 			}
 		} else {
