@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/go-zoox/cli v1.0.10
-	github.com/go-zoox/connect v1.4.12
+	github.com/go-zoox/connect v1.4.13
 	github.com/go-zoox/core-utils v1.2.7
 	github.com/go-zoox/random v1.0.3
 )
@@ -29,7 +29,7 @@ require (
 	github.com/go-zoox/debug v1.0.1 // indirect
 	github.com/go-zoox/encoding v1.2.1 // indirect
 	github.com/go-zoox/errors v1.0.2 // indirect
-	github.com/go-zoox/fetch v1.7.5 // indirect
+	github.com/go-zoox/fetch v1.7.6 // indirect
 	github.com/go-zoox/fs v1.3.9 // indirect
 	github.com/go-zoox/gzip v1.0.0 // indirect
 	github.com/go-zoox/headers v1.0.6 // indirect
@@ -45,7 +45,7 @@ require (
 	github.com/go-zoox/session v1.0.6 // indirect
 	github.com/go-zoox/tag v1.2.0 // indirect
 	github.com/go-zoox/uuid v0.0.1 // indirect
-	github.com/go-zoox/zoox v1.8.16 // indirect
+	github.com/go-zoox/zoox v1.9.0 // indirect
 	github.com/goccy/go-yaml v1.10.0 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
