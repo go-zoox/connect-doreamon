@@ -27,3 +27,4 @@ conf/config.yml
 *.bak
 
 connect
+connect-doreamon
