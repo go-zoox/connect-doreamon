@@ -1,4 +1,4 @@
 package main
 
 // Version is the version of this package.
-var Version = "1.2.4"
+var Version = "1.2.5"
