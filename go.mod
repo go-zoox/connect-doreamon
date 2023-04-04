@@ -1,6 +1,6 @@
 module github.com/go-zoox/connect-doreamon
 
-go 1.19
+go 1.20
 
 require (
 	github.com/go-zoox/cli v1.0.10
