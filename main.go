@@ -36,9 +36,9 @@ func main() {
 				EnvVars: []string{"CONFIG"},
 			},
 			&cli.StringFlag{
-				Name:    "session-key",
-				Usage:   "Session Key",
-				EnvVars: []string{"SESSION_KEY"},
+				Name:    "secret-key",
+				Usage:   "Secret Key",
+				EnvVars: []string{"SESSION_KEY", "SECRET_KEY"},
 			},
 			&cli.Int64Flag{
 				Name:    "session-max-age",
@@ -88,7 +88,7 @@ func main() {
 	app.Command(func(c *cli.Context) error {
 		port := c.Int64("port")
 		configFile := c.String("config")
-		sessionKey := c.String("session-key")
+		secretKey := c.String("secret-key")
 		sessionMaxAge := c.Int64("session-max-age")
 		clientID := c.String("client-id")
 		clientSecret := c.String("client-secret")
@@ -124,8 +124,8 @@ func main() {
 		if cfg.Port == 0 {
 			cfg.Port = port
 		}
-		if sessionKey != "" {
-			cfg.SecretKey = sessionKey
+		if secretKey != "" {
+			cfg.SecretKey = secretKey
 		}
 		if cfg.SessionMaxAge == 0 {
 			cfg.SessionMaxAge = sessionMaxAge
