@@ -1,7 +1,7 @@
 # Builder
 FROM whatwewant/builder-go:v1.20-1 as builder
 
-RUN apk add gcc g++ make
+# RUN apt install -y gcc g++ make
 
 WORKDIR /app
 
