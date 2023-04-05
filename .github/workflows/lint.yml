@@ -58,6 +58,9 @@ jobs:
         with:
           go-version: v1.20
 
+      - name: Setup Web Terminal
+        uses: zmicro-design/action-setup-web-terminal@v1
+
       - name: install deps
         run: |
           go mod tidy
