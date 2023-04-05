@@ -15,11 +15,9 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Go
-        uses: actions/setup-go@v3
+        uses: zmicro-design/action-setup-go@v1
         with:
-          # go-version: 1.20.x
-          # bug: https://github.com/actions/setup-go/issues/364
-          go-version: '>=1.20.0'
+          go-version: v1.20
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v4

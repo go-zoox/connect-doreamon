@@ -46,20 +46,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # - name: Set up Go
-      #   uses: actions/setup-go@v3
-      #   with:
-      #     # go-version: 1.20
-      #     # bug: https://github.com/actions/setup-go/issues/364
-      #     go-version: '>=1.20.0'
-
       - name: Set up Go
         uses: zmicro-design/action-setup-go@v1
         with:
           go-version: v1.20
-
-      # - name: Setup Web Terminal
-      #   uses: zmicro-design/action-setup-web-terminal@v1
 
       - name: install deps
         run: |
@@ -67,11 +57,13 @@ jobs:
           go install golang.org/x/tools/cmd/goimports@latest
           go install golang.org/x/lint/golint@latest
           go install github.com/mattn/goveralls@latest
+
       - name: static analysis
         run: |
           golint -set_exit_status
           go vet
           test -z "$(goimports -l .)"
+          
       - name: Test
         run: goveralls -service=github
         env:
