@@ -154,7 +154,7 @@ func main() {
 					return fmt.Errorf("upstream format error, protocol://host:port")
 				}
 
-				cfg.Upstream = config.ConfigPartService{
+				cfg.Upstream = config.ConfigUpstreamService{
 					Protocol: u.Scheme,
 					Host:     u.Hostname(),
 					Port:     cast.ToInt64(u.Port()),
@@ -165,7 +165,7 @@ func main() {
 					return fmt.Errorf("upstream format error, host:port")
 				}
 
-				cfg.Upstream = config.ConfigPartService{
+				cfg.Upstream = config.ConfigUpstreamService{
 					Protocol: "http",
 					Host:     parts[0],
 					Port:     cast.ToInt64(parts[1]),
@@ -183,7 +183,7 @@ func main() {
 						return fmt.Errorf("frontend format error, protocol://host:port")
 					}
 
-					cfg.Frontend = config.ConfigPartService{
+					cfg.Frontend = config.ConfigFrontendService{
 						Protocol: u.Scheme,
 						Host:     u.Hostname(),
 						Port:     cast.ToInt64(u.Port()),
@@ -194,7 +194,7 @@ func main() {
 						return fmt.Errorf("frontend format error, host:port")
 					}
 
-					cfg.Frontend = config.ConfigPartService{
+					cfg.Frontend = config.ConfigFrontendService{
 						Host: parts[0],
 						Port: cast.ToInt64(parts[1]),
 					}
@@ -208,7 +208,7 @@ func main() {
 						return fmt.Errorf("backend format error, protocol://host:port")
 					}
 
-					cfg.Backend = config.ConfigPartService{
+					cfg.Backend = config.ConfigBackendService{
 						Protocol: u.Scheme,
 						Host:     u.Hostname(),
 						Port:     cast.ToInt64(u.Port()),
@@ -219,7 +219,7 @@ func main() {
 						return fmt.Errorf("backend format error, host:port")
 					}
 
-					cfg.Backend = config.ConfigPartService{
+					cfg.Backend = config.ConfigBackendService{
 						Host: parts[0],
 						Port: cast.ToInt64(parts[1]),
 					}
