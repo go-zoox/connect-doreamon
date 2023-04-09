@@ -44,7 +44,7 @@ func main() {
 				Name:    "session-max-age",
 				Usage:   "Session Max Age",
 				EnvVars: []string{"SESSION_MAX_AGE"},
-				Value:   86400000,
+				Value:   86400,
 			},
 			&cli.StringFlag{
 				Name:    "client-id",
