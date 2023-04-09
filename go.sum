@@ -48,8 +48,8 @@ github.com/go-zoox/compress v1.0.1 h1:EyNxo5NscMLua5fvUdiGSF+BwhuTfMeyppu7OwKAW7
 github.com/go-zoox/compress v1.0.1/go.mod h1:iV6CcNulf3OuEfA1h1VOsaBqYH81cVSg5wNi5HDx2h4=
 github.com/go-zoox/config v1.2.3 h1:AUEUvVeMJrevz1RLPrit0To34oN8YZKehCTnIbubTRU=
 github.com/go-zoox/config v1.2.3/go.mod h1:8E/0x4CNEjBrPJe8SuaX1NCied3dz29RobDC2eHQssQ=
-github.com/go-zoox/connect v1.4.22 h1:kwcJ+HMqj7JFmAuD3N5sAS7BySU1q2nblUuIH5xVM60=
-github.com/go-zoox/connect v1.4.22/go.mod h1:60WzgF1A1hGnY5TY7Kck9T2qt4S9MWnMhUPGZRNGfUs=
+github.com/go-zoox/connect v1.4.23 h1:6e+mskzOfzIuR1VZ0/pOpmpczGvRxLayesx6zXZjywc=
+github.com/go-zoox/connect v1.4.23/go.mod h1:60WzgF1A1hGnY5TY7Kck9T2qt4S9MWnMhUPGZRNGfUs=
 github.com/go-zoox/cookie v1.0.2 h1:fEccN4WHF9LheJlwArleALlPgOC40ME7BRNh7nklM5M=
 github.com/go-zoox/cookie v1.0.2/go.mod h1:+xEawxty0L+z+4EIvTF2AaHUkUM7oIecGZ9XrEaYqsI=
 github.com/go-zoox/core-utils v1.0.4/go.mod h1:EknM3KLL6/kagL95wZbWE7mRRcYCG/fHqiJ/EH0ihAs=
