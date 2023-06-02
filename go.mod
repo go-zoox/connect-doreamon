@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/go-zoox/cli v1.3.2
-	github.com/go-zoox/connect v1.5.3
+	github.com/go-zoox/connect v1.5.4
 	github.com/go-zoox/core-utils v1.2.10
 	github.com/go-zoox/random v1.0.4
 )
