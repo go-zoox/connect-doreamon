@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/go-zoox/cli v1.3.2
-	github.com/go-zoox/connect v1.6.0
+	github.com/go-zoox/connect v1.6.1
 	github.com/go-zoox/core-utils v1.2.10
 	github.com/go-zoox/random v1.0.4
 )
@@ -16,7 +16,7 @@ require (
 	github.com/fatih/color v1.15.0 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
-	github.com/go-zoox/cache v1.0.2 // indirect
+	github.com/go-zoox/cache v1.0.3 // indirect
 	github.com/go-zoox/captcha v1.0.3 // indirect
 	github.com/go-zoox/chalk v1.0.2 // indirect
 	github.com/go-zoox/compress v1.0.1 // indirect
@@ -46,7 +46,7 @@ require (
 	github.com/go-zoox/session v1.2.0 // indirect
 	github.com/go-zoox/tag v1.2.2 // indirect
 	github.com/go-zoox/uuid v0.0.1 // indirect
-	github.com/go-zoox/zoox v1.10.1 // indirect
+	github.com/go-zoox/zoox v1.10.2 // indirect
 	github.com/goccy/go-yaml v1.11.0 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
